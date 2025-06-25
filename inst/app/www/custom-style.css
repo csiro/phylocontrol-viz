@@ -1,0 +1,89 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Custom css script for Shiny applications
+//  built with bslib and using the packages
+//  leaflet, DT (datatables), katex, shinyWidgets, plotly,
+//  shinyjs
+//
+//  Author: Louise Ord, Lauren Stevens
+//  Date: 2023-03-06
+//
+//  Last modified by: Lauren Stevens
+//  Date: 2023-08-11
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/* add smal space around button */
+#collapse {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+/* ~~~~~~~~~~~ */
+/*   Intro JS  */
+/* ~~~~~~~~~~~ */
+.introjs-dontShowAgain input {
+	height: 14px;
+}
+
+.introjs-tooltipReferenceLayer {
+	font-family: "Open Sans", sans;
+}
+
+.introjs-tooltip-title {
+	font-family: Montserrat;
+}
+
+.introjs-tooltip.larger {
+	max-width: 500px;
+	min-width: 500px;
+	margin-left: -250px;
+}
+
+.introjs-tooltip.medium {
+	min-width: 300px !important;
+}
+
+.introjs-tooltip.center {
+	left: 40%;
+}
+
+.introjs-tooltip.top1 {
+	top: 125px;
+}
+
+.introjs-tooltip.top2 {
+	top: 335px;
+}
+.introjs-tooltip.top3 {
+	top: 705px;
+}
+
+#help {
+  color: #f0f0f090 !important;
+  background-color: #ffffff00 !important;
+  border-color: #ffffff00 !important;
+  font-size: large;
+  padding: 10px !important;
+  padding-bottom: 1px !important;
+  border: none;
+  margin-left: 3px;
+}
+
+/* on hover default button style */
+#help:hover {
+  color: white !important;
+  /*color: #00313c !important;
+  border-color: #f0f0f0 !important;
+  background-color: #f0f0f0 !important;
+  box-shadow: none;*/
+}
+
+/* Remove top border from navset_underline
+   that we added for navbar */
+ul.nav.nav-underline li.nav-item a.nav-link.active {
+  border-top-color: white !important;
+}
+
+/* Center justify navset */
+ul.nav.nav-underline {
+  justify-content: center;
+}

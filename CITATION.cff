@@ -1,0 +1,36 @@
+# This CITATION.cff reference content was generated from Zotero.
+references:
+  - title: >-
+      PhyloControl: a phylogeny visualisation platform for risk analysis in weed biological control
+    abstract: |
+      1. Phylogenetic distance is a key measure used to develop species lists for host specificity tests that delimit the fundamental and realised host range of candidate weed biocontrol agents to meet the assumptions of the centrifugal phylogenetic method. Plant pathogens and insects, even those with broad host ranges, exhibit some degree of phylogenetic conservatism in their host plant associations. Thorough host-specificity testing is crucial to minimise the risk of off-target damage by biocontrol agents to native and economically important plant species. To facilitate this, host test lists need to be developed from an understanding of evolutionary relationships, usually visualised as a phylogenetic tree generated from genetic data, together with plant functional traits and geospatial information. Currently, the process of obtaining a host test list is not standardised, and the manual steps are time-consuming and challenging. 2. We introduce a user-friendly visualisation tool called PhyloControl to aid researchers in their decision-making during biocontrol risk analysis. PhyloControl integrates taxonomic data, molecular data, spatial data, and plant traits in an intuitive interactive interface, empowering biocontrol practitioners to summarise, visualise and analyse data efficiently. 3. Comprehensively sampled phylogenetic trees are often unavailable, and older published phylogenies often lack branch resolution and support, which increases uncertainty. PhyloControl includes a workflow implemented through Quarto notebooks in R that allows users to download publicly available DNA sequences and perform phylogenetic analyses. The modular workflow also incorporates species distribution modelling to predict the current and potential extent of target weed species. 4. PhyloControl will streamline the development of biocontrol host tests lists to support risk analysis and decision making in classical weed biological control.
+    type: preprint
+    license: © 2025, Posted by Cold Spring Harbor Laboratory. This pre-print is available under a Creative Commons License (Attribution-NonCommercial 4.0 International), CC BY-NC 4.0, as described at http://creativecommons.org/licenses/by-nc/4.0/
+    copyright: © 2025, Posted by Cold Spring Harbor Laboratory. This pre-print is available under a Creative Commons License (Attribution-NonCommercial 4.0 International), CC BY-NC 4.0, as described at http://creativecommons.org/licenses/by-nc/4.0/
+    database: bioRxiv
+    date-accessed: 2025-06-15T09:51:29Z
+    languages: 
+      - en
+    repository: bioRxiv
+    url: https://www.biorxiv.org/content/10.1101/2025.06.11.658203v1
+    authors: 
+      - family-names: Chen
+        given-names: Stephanie H.
+      - family-names: Stevens
+        given-names: Lauren
+      - family-names: Gooden
+        given-names: Ben
+      - family-names: Rafter
+        given-names: Michelle A.
+      - family-names: Knerr
+        given-names: Nunzio
+      - family-names: Thrall
+        given-names: Peter H.
+      - family-names: Ord
+        given-names: Louise
+      - family-names: Schmidt-Lebuhn
+        given-names: Alexander N.
+    date-published: 2025-06-15
+    identifiers: 
+      - type: doi
+        value: 10.1101/2025.06.11.658203

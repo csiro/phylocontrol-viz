@@ -1,0 +1,149 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Custom CSIRO branded css script for Shiny applications
+//  built with bslib.
+//
+//  The css used to brand this application is based on the
+//  CSIRO Web Style Guide. It should be seen as an example
+//  and is not expected to suit all Shiny application design
+//  choices.
+//
+//  https://style-uat.csiro.au/CSIROau/Get-started/How-to-use)
+//
+//  Author: Louise Ord, Lauren Stevens
+//  Date: 2023-03-06
+//
+//  Last modified by: Lauren Stevens
+//  Date: 2023-08-11
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*~~~~~~~~~~~/
+  Login
+/~~~~~~~~~~~*/
+
+/* Header font */
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+ color: #00313c;
+ font-family: Montserrat,"Open Sans",sans-serif !important;
+ font-weight: 400;
+}
+
+/* Style the login div */
+div.login {
+    text-align: left;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+/*~~~~~~~~~~~/
+  BSLIB
+/~~~~~~~~~~~*/
+
+/* move csiro brand to right a little
+// to allow for menu when window shrinks */
+.ct-button {
+  right: 90px !important;
+}
+
+/* move bslib sidebar toggle to top */
+/*.bslib-sidebar-layout>.collapse-toggle {
+    bottom: unset;
+    top: 1rem;
+}*/
+
+/* header */
+.navbar {
+  /*max-height: 134px !important;*/
+  min-height: 67px;
+}
+
+.navbar-header {
+    min-width: 450px;
+    text-align: center;
+}
+
+.navbar-brand {
+    font-size: 24px !important;
+}
+
+
+/* border on top of tab */
+li.nav-item a.nav-link.active {
+	border-top-color: #00A9CE;
+	border-top-style: solid;
+	border-top-width: medium;
+	margin-top: 4px;
+	padding-top: initial;
+}
+
+/* border on top of tab */
+li.nav-item a.nav-link {
+	border-top-color: transparent;
+	border-top-style: solid;
+	border-top-width: medium;
+	margin-top: 4px;
+	padding-top: initial;
+}
+
+/* padding for tab active */
+ul.nav.navbar-nav li.nav-item a.nav-link.active {
+  font-size: 19px;
+	padding-top: 10px;
+	padding-right: 10px !important;
+	padding-left: 10px !important;
+}
+
+/* padding for tab */
+ul.nav.navbar-nav li.nav-item a.nav-link {
+	font-size: 19px;
+	padding-top: 10px;
+	padding-right: 10px !important;
+	padding-left: 10px !important;
+}
+
+/*~~~~~~~~~~~/
+  buttons
+/~~~~~~~~~~~*/
+
+/* button */
+.btn {
+  padding-left: 1.5em !important;
+  padding-right: 1.5em !important;
+  font-family: "Montserrat","Open sans",sans-serif !important;
+}
+
+/* default button style */
+.btn-default, .btn-default:active, .btn-default:focus {
+    background-color: #004b87 !important;
+    border-color: #004b87 !important;
+    color: #ffffff !important;
+    border-radius: 4px !important;
+    transition:.2s background-color,.2s border,.3s padding !important;
+    box-shadow: none !important;
+}
+
+/* on hover default button style */
+.btn-default:hover {
+  color: #00313c !important;
+  border-color: #f0f0f0 !important;
+  background-color: #f0f0f0 !important;
+  box-shadow: none;
+}
+
+.btn-default:active:focus {
+  border-color: #004b87 !important;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+	color: #00313c !important;
+	border-color: #f0f0f0 !important;
+	background-color: #f0f0f0 !important;
+	box-shadow: none;
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+
