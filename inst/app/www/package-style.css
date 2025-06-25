@@ -1,0 +1,198 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+//  Custom script for Shiny applications using the packages:
+//
+//  leaflet,
+//  DT (datatables),
+//  katex,
+//  shinyWidgets,
+//  plotly,
+//  shinyjs,
+//  shinybusy
+//
+//  The css used in this application is based on the
+//  CSIRO Web Style Guide. It should be seen as an example
+//  and is not expected to suit all Shiny application design
+//  choices.
+//
+//  https://style-uat.csiro.au/CSIROau/Get-started/How-to-use)
+//
+//  Author: Louise Ord, Lauren Stevens
+//  Date: 2023-03-06
+//
+//  Last modified by: Lauren Stevens
+//  Date: 2023-08-11
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~//
+   katex
+//~~~~~~~~~~~*/
+
+/* Font for katex - used for formulae*/
+.katex {
+  font-size: 1em !important;
+}
+
+/*~~~~~~~~~~~//
+   Shinybusy
+//~~~~~~~~~~~*/
+
+.shinybusy-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF60;
+  z-index: 9900;
+}
+
+/*~~~~~~~~~~~//
+   Leaflet
+//~~~~~~~~~~~*/
+
+.leaflet-container {
+  font: 1em "Open Sans", sans-serif !important;
+  color: #575757 !important;
+  margin-top: 10px;
+  border: 2px solid #142C3F;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: 0;
+    background-clip: padding-box;
+}
+
+/* leaflet buttons */
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+    border: 0 !important;
+}
+
+.leaflet-touch .leaflet-bar {
+  color: #00313c !important;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.leaflet-touch .leaflet-bar a:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.leaflet-touch .leaflet-bar a:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.leaflet-touch .leaflet-bar a:hover {
+  color: #00313c !important;
+  background-color: #d9d9d9;
+  transition: background-color 0.5s;
+}
+
+.leaflet-touch .leaflet-bar button {
+  background-color: #ffffff;
+  border-radius: 5px !important;
+}
+
+.leaflet-touch .leaflet-bar button:hover {
+  background-color: #d9d9d9;
+  text-decoration: underline !important;
+  transition: background-color 0.5s;
+}
+
+/* icons */
+.leaflet-touch .leaflet-bar .fa::before {
+  color: #00313c;
+}
+
+.leaflet-touch .leaflet-bar:hover .fa::before {
+  border-bottom: 2px solid #00313c;
+}
+
+/* legend */
+.info {
+    background: white !important;
+    box-shadow: 0;
+    border-radius: 5px;
+}
+
+/*~~~~~~~~~~~//
+   Plotly
+//~~~~~~~~~~~*/
+
+/* Mpdebar tooltip top arrow */
+.modebar-btn:before {
+    border-bottom-color: #004B87 !important;
+}
+
+/* Modebar tooltip body */
+.modebar-btn:after {
+  background: #004B87 !important;
+}
+
+/*~~~~~~~~~~~//
+   DT (datatables)
+//~~~~~~~~~~~*/
+
+/* search box */
+.form-control {
+    border-radius: 4px !important;
+    box-shadow: none !important;
+    border-color: #D9D9D9 !important;
+/*    padding: 4px 8px 4px 8px !important;*/
+    outline: none !important;
+}
+
+/* pagination text */
+.pagination>li>a, .pagination>li>span {
+    color: #004b87 !important;
+}
+
+/* pagination active/focus text */
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    color: #fff !important;
+    background-color: #004b87 !important;
+    border-color: #004b87 !important;
+}
+
+/* pagination inactive */
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+    cursor: not-allowed;
+    opacity: .2;
+    text-decoration: none !important;
+}
+
+/* pagination end boxes */
+.pagination>li:first-child>a, .pagination>li:first-child>span,
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-radius: 4px !important;
+}
+
+/* selected row */
+.table.dataTable tbody td.active, .table.dataTable tbody tr.active td {
+  color: #004b87 !important;
+  background-color: #e6e6e6 !important;
+}
+
+/* selection box slider */
+.noUi-connect {
+    background: #1d2021 !important;
+}
+
+
+/*~~~~~~~~~~~//
+   Shiny Notifications
+//~~~~~~~~~~~*/
+
+/* Change position of showNotification */
+/*#shiny-notification-panel {
+  position: absolute;
+	top: 1150px;
+	left: 40px;
+	width: 300px;
+}*/
+
+

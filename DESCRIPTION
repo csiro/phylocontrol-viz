@@ -1,0 +1,52 @@
+Package: phylocontrol.viz
+Title: PhyloControl
+Version: 1.0.0
+Authors@R: 
+    c(person("Lauren", "Stevens", , "Lauren.Stevens@csiro.au", role = c("aut", "cre")),
+      person("Louise", "Ord", , "Louise.Ord@csiro.au", role = c("aut")),
+      person("Stephanie", "Chen", , "Stephanie.Chen@csiro.au", role = c("aut")),
+      person("Nunzio", "Knerr", , "Nunzio.Knerr@csiro.au", role = c("aut")))
+Description: A phylogeny and spatial data visualisation interface for risk
+    analysis and decision support in weed biological control.
+License: GPL (>= 3) + file LICENSE
+Imports: 
+    ape,
+    bslib (>= 0.8.0),
+    castor,
+    config,
+    data.table,
+    dplyr,
+    DT,
+    ggplot2,
+    ggtree (>= 3.10.1),
+    golem,
+    htmltools,
+    leaflet,
+    leaflet.extras,
+    leaflet.extras2,
+    plotly,
+    raster,
+    rintrojs,
+    rworldmap,
+    scico,
+    sf,
+    shiny,
+    shinybusy,
+    shinyhelper,
+    shinyjs,
+    shinyWidgets,
+    terra,
+    tidyr,
+    tidytree (>= 0.4.6),
+    tools
+Suggests: 
+    spelling,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+LazyData: true
+RoxygenNote: 7.3.2
+biocViews:
+Depends: 
+    R (>= 3.5)

@@ -1,0 +1,45 @@
+name: Mirror to Client Repo
+
+on:
+  push:
+    branches:
+      - mirror
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Configure Git
+        run: |
+          git config --global user.email "${{GITHUB.ACTOR}}@users.noreply.github.com"
+          git config --global user.name "${{GITHUB.ACTOR}}"
+      
+      - name: Clone the Client's Repository
+        env:
+          PHYLO_TOKEN: ${{ secrets.PHYLO_TOKEN }}
+        run: |
+          git clone https://${PHYLO_TOKEN}:x-oauth-basic@github.com/csiro-internal/phylocontrol-viz.git client_repo
+          cd client_repo
+          git remote set-url origin https://${PHYLO_TOKEN}:x-oauth-basic@github.com/csiro-internal/phylocontrol-viz.git
+          
+      - name: Add Production Repo as Upstream
+        working-directory: client_repo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! git remote get-url upstream &>/dev/null; then
+            git remote add upstream https://x-access-token:${GH_TOKEN}@github.com/csiro-internal/phylocontrol-viz-dev.git
+          fi
+          git fetch upstream
+
+      - name: Merge Production Changes
+        working-directory: client_repo
+        run: |
+          git checkout main
+          git merge upstream/mirror --no-edit --allow-unrelated-histories || git merge --abort
+
+      - name: Push Changes to Client Repo
+        working-directory: client_repo
+        run: git push origin main
+
