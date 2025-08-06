@@ -17,11 +17,11 @@ jobs:
       
       - name: Clone the Client's Repository
         env:
-          PHYLO_TOKEN: ${{ secrets.PHYLO_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git clone https://${PHYLO_TOKEN}:x-oauth-basic@github.com/csiro-internal/phylocontrol-viz.git client_repo
+          git clone https://x-access-token:${GH_TOKEN}@github.com/csiro/phylocontrol-viz.git client_repo
           cd client_repo
-          git remote set-url origin https://${PHYLO_TOKEN}:x-oauth-basic@github.com/csiro-internal/phylocontrol-viz.git
+          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/csiro/phylocontrol-viz.git
           
       - name: Add Production Repo as Upstream
         working-directory: client_repo

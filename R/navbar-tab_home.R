@@ -7,8 +7,8 @@
 # Author: Louise Ord, Lauren Stevens
 # Date: 2021-03-03
 #
-# Last Modified by: Lauren Stevens
-# Date: 2025-02-04
+# Last Modified by: Stephanie Chen
+# Date: 2025-08-06
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~~~~~~~~~~~~
@@ -38,12 +38,12 @@ navbar_tab_home <- function(input,output,session) {
             # h4("Data collection"),
             # h4("How to Use the Tool"),
             HTML(paste0("<p style='font-size: 14px'>",
-                        "Louise Ord (IMT, Eveleigh), ",
-                        "Lauren Stevens (IMT, Clayton)",
+                        "Louise Ord (CSIRO IMT, Eveleigh), ",
+                        "Lauren Stevens (CSIRO IMT, Clayton)",
                         "</p>",
                         br())),
             
-            h5('Contributors'),
+            h5('Author contributions'),
             HTML(paste0("<p style='font-size: 14px'>",
                         "Stephanie Chen (CSIRO NCMI, Canberra), ",
                         "Lauren Stevens (CSIRO IM&T, Clayton), ",
@@ -54,12 +54,15 @@ navbar_tab_home <- function(input,output,session) {
                         "Louise Ord (CSIRO IM&T, Eveleigh), and ",
                         "Alexander Schmidt-Lebuhn (CSIRO NCMI, Canberra).",
                         "</p>",
+                        "<p style='font-size: 14px;'>",
+                        "Alexander Schmidt-Lebuhn, Ben Gooden, and Michelle Rafter conceptualised the project. Stephanie Chen and Nunzio Knerr prepared and tested the Quarto notebooks.  The base framework concept and code were originally developed by Louise Ord with conversion to bslib done by Lauren Stevens. The core PhyloControl application code (Phylogeny and Map tabs) was written and implemented by Lauren Stevens based on the approach and design conceptualised by Louise Ord. Advice on solutions and implementation strategies for technical challenges were provided by Louise Ord and Lauren Stevens. The Model tab was created and developed by Nunzio Knerr and Stephanie Chen. The Report tab was created by Stephanie Chen. Alexander Schmidt-Lebuhn wrote the original functions for calculating degrees of separation and patristic distance. The Erigeron datasets used in this paper were prepared by Stephanie Chen, Nunzio Knerr, and Alexander Schmidt-Lebuhn. Stephanie Chen led the writing of the manuscript. All authors contributed critically to the drafts and gave final approval for publication.",
+                        "</p>",
                         br())),
-           
-             h5('Attribution'),
+            
+            h5('Attribution'),
             HTML(paste0("<p style='font-size: 14px;'>",
-                        "The PhyloControl paper is currently in review. For now, please cite the pre-print on bioRxiv DOI: ",
-                        "<a href='https://doi.org/10.1101/2025.06.11.658203' target='_blank'>10.1101/2025.06.11.658203</a>.",
+                        "The PhyloControl paper is published in <i>Biological Control</i>. DOI: ",
+                        "<a href='https://doi.org/10.1016/j.biocontrol.2025.105859' target='_blank'>10.1016/j.biocontrol.2025.105859</a>.",
                         "</p><br>",
                         br()))
           ))

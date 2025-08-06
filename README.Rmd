@@ -25,7 +25,7 @@ A phylogeny and spatial data visualisation interface for risk analysis and decis
 
 ## Introduction
 
-Hello! PhyloControl is a user-friendly visualisation tool to aid biocontrol researchers in their decision-making during risk analysis. Thorough host-specificity testing is crucial to minimise the risk of off-target damage by biocontrol agents to native and economically important plant species. To facilitate this, host test lists need to be developed from an understanding of evolutionary relationships. The process of obtaining a host test list is currently not standardised, and the manual steps may be time-consuming and challenging. PhyloControl integrates taxonomic data, molecular data, spatial data, and plant traits in an intuitive interactive interface, empowering biocontrol practitioners to summarise, visualise, and analyse data efficiently.
+PhyloControl is a user-friendly visualisation tool to aid biocontrol researchers in their decision-making during risk analysis. Thorough host-specificity testing is crucial to minimise the risk of off-target damage by biocontrol agents to native and economically important plant species. To facilitate this, host test lists need to be developed from an understanding of evolutionary relationships. The process of obtaining a host test list is currently not standardised, and the manual steps may be time-consuming and challenging. PhyloControl integrates taxonomic data, molecular data, spatial data, and plant traits in an intuitive interactive interface, empowering biocontrol practitioners to summarise, visualise, and analyse data efficiently.
 
 This repository, `phylocontrol-viz`, contains the code for the R Shiny visualisation application. Inputs for visualisation may be generated using the Quarto notebooks provided in the [phylocontrol-geninput repository](https://github.com/csiro/phylocontrol-geninput).
 
@@ -178,6 +178,6 @@ Sys.time()
 
 ## Citing PhyloControl
 
-The PhyloControl paper is currently in review. For now, please cite the [pre-print on bioRxiv](https://doi.org/10.1101/2025.06.11.658203).
+The PhyloControl paper is published in *Biological Control*.
 
-> Stephanie H. Chen, Lauren Stevens, Ben Gooden, Michelle A. Rafter, Nunzio Knerr, Peter H. Thrall, Louise Ord, Alexander N. Schmidt-Lebuhn (2025). PhyloControl: a phylogeny visualisation platform for risk analysis in weed biological control. bioRxiv. DOI: [10.1101/2025.06.11.658203](https://doi.org/10.1101/2025.06.11.658203)
+> Stephanie H. Chen, Lauren Stevens, Ben Gooden, Michelle A. Rafter, Nunzio Knerr, Peter H. Thrall, Louise Ord, Alexander N. Schmidt-Lebuhn (2025). PhyloControl: a phylogeny visualisation platform for risk analysis in weed biological control. *Biological Control*. DOI: [10.1016/j.biocontrol.2025.105859](https://doi.org/10.1016/j.biocontrol.2025.105859 "Persistent link using digital object identifier")

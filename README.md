@@ -165,7 +165,7 @@ This package was made using `{golem}` and you are reading about version
 
 This README was compiled on:
 
-    #> [1] "2025-06-16 16:06:47 AEST"
+    #> [1] "2025-08-06 11:43:41 AEST"
 
 <!-- Here are the tests results and package coverage: -->
 <!-- ```{r, error = TRUE} -->
@@ -180,11 +180,10 @@ This README was compiled on:
 
 ## Citing PhyloControl
 
-The PhyloControl paper is currently in review. For now, please cite the
-[pre-print on bioRxiv](https://doi.org/10.1101/2025.06.11.658203).
+The PhyloControl paper is published in *Biological Control*.
 
 > Stephanie H. Chen, Lauren Stevens, Ben Gooden, Michelle A. Rafter,
 > Nunzio Knerr, Peter H. Thrall, Louise Ord, Alexander N. Schmidt-Lebuhn
 > (2025). PhyloControl: a phylogeny visualisation platform for risk
-> analysis in weed biological control. bioRxiv. DOI:
-> [10.1101/2025.06.11.658203](https://doi.org/10.1101/2025.06.11.658203)
+> analysis in weed biological control. *Biological Control*. DOI:
+> [10.1016/j.biocontrol.2025.105859](https://doi.org/10.1016/j.biocontrol.2025.105859 "Persistent link using digital object identifier")
