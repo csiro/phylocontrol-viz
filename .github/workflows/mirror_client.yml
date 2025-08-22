@@ -8,10 +8,15 @@ on:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    permissions:
-        contents: write
-        
+    
     steps:
+      - name: Generate GitHub App Token
+          id: generate_app_token
+          uses: actions/create-github-app-token@v1 
+          with:
+            app-id: ${{ secrets.GH_APP_ID }} 
+            private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          
       - name: Configure Git
         run: |
           git config --global user.email "${{GITHUB.ACTOR}}@users.noreply.github.com"
@@ -19,7 +24,7 @@ jobs:
       
       - name: Clone the Client's Repository
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.generate_app_token.outputs.token }}
         run: |
           git clone https://x-access-token:${GH_TOKEN}@github.com/csiro/phylocontrol-viz.git client_repo
           cd client_repo
@@ -28,7 +33,7 @@ jobs:
       - name: Add Production Repo as Upstream
         working-directory: client_repo
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ steps.generate_app_token.outputs.token }}
         run: |
           if ! git remote get-url upstream &>/dev/null; then
             git remote add upstream https://x-access-token:${GH_TOKEN}@github.com/csiro-internal/phylocontrol-viz-dev.git
