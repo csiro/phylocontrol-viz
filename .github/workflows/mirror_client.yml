@@ -57,5 +57,5 @@ jobs:
 
       - name: Push Changes to Client Repo
         working-directory: client_repo
-        run: git push origin main
+        run: git push origin prerelease
 
