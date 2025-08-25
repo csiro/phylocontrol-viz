@@ -52,8 +52,8 @@ jobs:
       - name: Merge Production Changes
         working-directory: client_repo
         run: |
-          git checkout prerelease
-          git merge upstream/mirror -s ours --no-edit --allow-unrelated-histories || git merge --abort
+          git checkout main
+          git merge upstream/mirror -s ours --no-edit --allow-unrelated-histories
 
       - name: Push Changes to Client Repo
         working-directory: client_repo
