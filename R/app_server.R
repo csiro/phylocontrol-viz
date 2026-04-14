@@ -2261,7 +2261,6 @@ app_server <- function(input, output, session) {
 
         model_result_grd <- terra::rast(model_file)
         model_result_grd <- terra::project(model_result_grd, "EPSG:4326")
-        model_result_grd <- raster::raster(model_result_grd)
 
         # Crop raster
         disp_win_wgs84 <- sf::st_sfc(sf::st_point(c(-180, -89)),
@@ -2269,7 +2268,7 @@ app_server <- function(input, output, session) {
                                      crs = 4326)
         bb <- sf::st_bbox(disp_win_wgs84) #Get the bounding box
         #crop the rasters to the extent
-        cropped_model_result_grd <- terra::crop(model_result_grd, bb)
+        cropped_model_result_grd <- terra::crop(model_result_grd, terra::ext(bb))
 
        } else {
 
@@ -2372,7 +2371,6 @@ app_server <- function(input, output, session) {
 
         model_result_grd <- terra::rast(model_file)
         model_result_grd <- terra::project(model_result_grd, "EPSG:4326")
-        model_result_grd <- raster::raster(model_result_grd)
 
         # Crop raster
         disp_win_wgs84 <- sf::st_sfc(sf::st_point(c(-180, -89)),
@@ -2380,7 +2378,7 @@ app_server <- function(input, output, session) {
                                      crs = 4326)
         bb <- sf::st_bbox(disp_win_wgs84) #Get the bounding box
         #crop the rasters to the extent
-        cropped_model_result_grd <- terra::crop(model_result_grd, bb)
+        cropped_model_result_grd <- terra::crop(model_result_grd, terra::ext(bb))
 
         } else {
 
