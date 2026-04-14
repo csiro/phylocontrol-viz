@@ -22,7 +22,6 @@ library(data.table)
 library(ape)
 library(utils)
 library(terra)
-library(raster)
 library(methods)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Path
@@ -69,7 +68,6 @@ maxent_model_file <- paste0(maxent_path, "maxent_predict.grd")
 demo_maxent_grd   <- terra::rast(maxent_model_file)
 
 demo_maxent_grd <- terra::project(demo_maxent_grd, "EPSG:4326")
-demo_maxent_grd <- raster::raster(demo_maxent_grd)
 
 # Crop raster
 disp_win_wgs84 <- sf::st_sfc(sf::st_point(c(-180, -89)),
@@ -78,14 +76,7 @@ disp_win_wgs84 <- sf::st_sfc(sf::st_point(c(-180, -89)),
 # Get the bounding box
 bb <- sf::st_bbox(disp_win_wgs84)
 # crop the rasters to the extent
-cropped_maxent_result_grd <- terra::crop(demo_maxent_grd, bb)
-
-# # Convert to rasterLayer before saving
-# # https://github.com/rspatial/terra/issues/549
-# # https://tmieno2.github.io/R-as-GIS-for-Economists/convert-to-rb.html
-# demo_maxent     <- methods::as(demo_maxent_grd, "Raster")
-# # https://cran.r-project.org/web/packages/terra/terra.pdf
-# demo_maxent <- raster::raster(demo_maxent_grd)
+cropped_maxent_result_grd <- terra::crop(demo_maxent_grd, terra::ext(bb))
 
 # put in memory
 # demo_maxent <- demo_maxent*1
@@ -108,7 +99,6 @@ clim_model_file <- paste0(clim_path, "climatch_predict.grd")
 demo_clim_grd   <- terra::rast(clim_model_file)
 
 demo_clim_grd <- terra::project(demo_clim_grd, "EPSG:4326")
-demo_clim_grd <- raster::raster(demo_clim_grd)
 
 # Crop raster
 disp_win_wgs84 <- sf::st_sfc(sf::st_point(c(-180, -89)),
@@ -117,14 +107,7 @@ disp_win_wgs84 <- sf::st_sfc(sf::st_point(c(-180, -89)),
 #Get the bounding box
 bb <- sf::st_bbox(disp_win_wgs84)
 #crop the rasters to the extent
-cropped_clim_result_grd <- terra::crop(demo_clim_grd, bb)
-
-# # Convert to rasterLayer before saving
-# # https://github.com/rspatial/terra/issues/549
-# # https://tmieno2.github.io/R-as-GIS-for-Economists/convert-to-rb.html
-# demo_clim       <- methods::as(demo_clim_grd  , "Raster")
-# # https://cran.r-project.org/web/packages/terra/terra.pdf
-# demo_clim   <- raster::raster(demo_clim_grd)
+cropped_clim_result_grd <- terra::crop(demo_clim_grd, terra::ext(bb))
 
 # put in memory
 # demo_clim   <- demo_clim*1

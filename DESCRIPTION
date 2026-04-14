@@ -25,7 +25,6 @@ Imports:
     leaflet.extras,
     leaflet.extras2,
     plotly,
-    raster,
     rintrojs,
     rworldmap,
     scico,
