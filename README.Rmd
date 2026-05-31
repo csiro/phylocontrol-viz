@@ -148,7 +148,7 @@ Please note that `{phylocontrol.viz}` is released with a [Contributor Code of Co
 
 ## About
 
-This package was made using `{golem}` and you are reading about version `r golem::pkg_version()` .
+This package was made using `{golem}` and you are reading about version `r golem::pkg_version()`.
 
 This README was compiled on:
 

@@ -29,7 +29,7 @@ golem::fill_desc(
     role = c("aut", "cre") # Your role (here author/creator)
   ),
   repo_url = "https://github.com/csiro/phylocontrol-viz", # The URL of the GitHub repo (optional),
-  pkg_version = "1.0.0", # The version of the package containing the app
+  pkg_version = read.dcf("DESCRIPTION")[1, "Version"], # The version of the package containing the app
   set_options = TRUE # Set the global golem options
 )
 

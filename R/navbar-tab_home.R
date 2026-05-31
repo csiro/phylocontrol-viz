@@ -8,7 +8,7 @@
 # Date: 2021-03-03
 #
 # Last Modified by: Stephanie Chen
-# Date: 2025-08-06
+# Date: 2026-05-27
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # ~~~~~~~~~~~~~
@@ -30,6 +30,14 @@ navbar_tab_home <- function(input,output,session) {
         bslib::nav_panel(
           title = 'Introduction',
           br(),
+          HTML(paste0(
+            "<p style='font-size: 14px; text-align: left;'>",
+            "This package was made using <code>{golem}</code> and you are running PhyloControl version ",
+            as.character(golem::pkg_version()),
+            ".",
+            "</p>",
+            "<br/>"
+          )),
           htmltools::includeMarkdown(path = app_sys('app/www/intro.md')),
 
           HTML(paste0(

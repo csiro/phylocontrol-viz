@@ -1011,6 +1011,9 @@ app_server <- function(input, output, session) {
     print('update trait name - phylogeny tab')
     traits <- traitData()
     vals$traitNames <- names(traits)[2:length(names(traits))]
+    if (!is.null(vals$traits) || !is.null(input$traits)) {
+      shinyjs::enable('update')
+    }
     vals$traits     <- NULL
     vals$list_nodes <- vals$numNodes
     vals$collapsed_nodes <- NULL
@@ -1021,7 +1024,10 @@ app_server <- function(input, output, session) {
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   observeEvent(input$target,{
     print('update target - phylogeny tab')
-    if (vals$targetSpecies!=input$target) {
+    if (!identical(vals$targetSpecies,input$target)) {
+      if (!is.null(vals$traits) || !is.null(input$traits)) {
+        shinyjs::enable('update')
+      }
       vals$targetSpecies <- input$target
     }
   })
@@ -1602,6 +1608,7 @@ app_server <- function(input, output, session) {
         num_continuous <- sum(trait_order!='character')
 
         sum_len_cat <- 0
+        discrete_legend_rows <- 0
         # pos_legd    <- 0
         for (trait in names(trait_order)) {
           indx <- grep(trait,names(trait_order))
@@ -1675,6 +1682,9 @@ app_server <- function(input, output, session) {
 
             len_cat  <- length(unique(tree_plot_data[[trait]]))
             category <- sort(unique(tree_plot_data2[[trait]]))
+            if (show_legend) {
+              discrete_legend_rows <- discrete_legend_rows + len_cat + 1
+            }
 
             # for highlight scale
             if (nrow(num_cat_order)>5) {
@@ -1860,24 +1870,20 @@ app_server <- function(input, output, session) {
 
               # position
               top_legd <- 0.9
-              # if (plotHeight <= 1000) {
-              #   legd_mul <- 3
-              # } else if (plotHeight > 1000 & plotHeight <= 3000) {
-              #   legd_mul <- 2
-              # } else {
-              legd_mul <- 1
-              # }
-              # legd_mul <- plotHeight/len_div/100
-              #legd_mul <- num_discrete+1
-              # print(vals$plotHeight)
+              legd_row_gap <- ifelse(plotHeight <= 1000, 0.035,
+                                      ifelse(plotHeight <= 2000, 0.025, 0.018))
+              discrete_legend_offset <- max(num_discrete*.08,
+                                            discrete_legend_rows*legd_row_gap)
+              continuous_legend_gap <- max(0.08,
+                                           ggpltly$x$data[[3]]$marker$colorbar$len + 0.04)
               if (legend_continuous==0) {
-                ggpltly[[1]]$data[[3]]$marker$colorbar$y <- top_legd - num_discrete*(.08*legd_mul)
+                ggpltly[[1]]$data[[3]]$marker$colorbar$y <- top_legd - discrete_legend_offset
                 #(top_legd/4)*num_continuous #+
                 #  ggpltly$x$data[[3]]$marker$colorbar$len/2
               } else {
-                ggpltly[[1]]$data[[3]]$marker$colorbar$y <- top_legd - num_discrete*(.08*legd_mul) -
+                ggpltly[[1]]$data[[3]]$marker$colorbar$y <- top_legd - discrete_legend_offset -
                   #(top_legd/4)*num_continuous -
-                  legend_continuous*ggpltly$x$data[[3]]$marker$colorbar$len
+                  legend_continuous*continuous_legend_gap
               }
               # ggpltly[[1]]$data[[3]]$marker$colorbar$y   <- 1-pos_legd-.05
               # # ggpltly[[1]]$data[[3]]$marker$colorbar$y   <- 1-((indx)*.15)
@@ -1932,19 +1938,11 @@ app_server <- function(input, output, session) {
                            #"zoomIn2d",
                            #"zoomOut2d"
                          ),
-                         toImageButtonOptions= list(filename = save_png))
-        # try to add shape to subplot - doesn't work for some reason
-        #|>
-        # plotly::layout(shape=list(list(type = "rect",
-        #                        fillcolor = "transparent",
-        #                        line = list(color = mid_fuchsia),
-        #                        #opacity = 0.3,
-        #                        x0 = .6,
-        #                        x1 = 1,
-        #                        xref = "x",
-        #                        y0 = target_traits$y-0.5,
-        #                        y1 = target_traits$y+0.5,
-        #                        yref = "y")))
+                         toImageButtonOptions= list(
+                           filename = save_png,
+                           format = 'png',
+                           scale = 4
+                         ))
       } else {
         combined_plot <- gp_1 |> # gp_1 is the tree
           plotly::config(displaylogo=F,
@@ -1964,7 +1962,11 @@ app_server <- function(input, output, session) {
                            #"zoomIn2d",
                            #"zoomOut2d"
                          ),
-                         toImageButtonOptions= list(filename = save_png))
+                         toImageButtonOptions= list(
+                           filename = save_png,
+                           format = 'png',
+                           scale = 4
+                         ))
       }
     } else {
       combined_plot <- gp_1 |> # gp_1 is the tree
@@ -1985,7 +1987,11 @@ app_server <- function(input, output, session) {
                          #"zoomIn2d",
                          #"zoomOut2d"
                        ),
-                       toImageButtonOptions= list(filename = save_png))
+                       toImageButtonOptions= list(
+                         filename = save_png,
+                         format = 'png',
+                         scale = 4
+                       ))
     }
     # rm(list = ls(pattern = "gp_"))
     combined_plot$x$source <- "ggtree" # to fix click event for subplot
