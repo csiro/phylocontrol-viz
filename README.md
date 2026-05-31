@@ -88,14 +88,14 @@ manuscript](https://doi.org/10.25919/21fr-hk78).
 A number of inputs can be visualised across the Phylogeny, Map, Model,
 and Report tabs available in the visualisation app.
 
-| File                               | Tab       | Requisite | Description                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|:-----------------------------------|:----------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `{study_group}.tre`                | Phylogeny | Required  | The phylogenetic tree data in the text-based Newick format. Can be created via the Quarto notebooks.                                                                                                                                                                                                                                                                                                                                 |
-| `{study_group}_traits.csv`         | Phylogeny | Optional  | Table of trait data, usually categorical, but not limited to, with a column for each trait. The first column should have the header `Species_` and the rows should contain all the species in the tree as scientific names with underscores between the genus and species. All character names (column headers) and states (variables in rows) must be unique. Blanks or NAs are allowed. This file is manually created by the user. |
-| `{study_group}_default_target.txt` | Phylogeny | Optional  | Text file defining the target species name to highlight in the app. Defaults to the first species alphabetically if missing.                                                                                                                                                                                                                                                                                                         |
-| `{study_group}_occurrences.csv`    | Map       | Optional  | Occurrence data with latitude and longitude in decimal degrees. Required columns: `species`, `decimalLatitude`, `decimalLongitude`, and `country`. This file should be created via the Quarto notebooks to ensure correct format.                                                                                                                                                                                                    |
-| `sdm/climatch_results`             | Model     | Optional  | Species distribution modelling files using the CLIMATCH method. Key file: `climatch_predict.grd`. Can be created via the Quarto notebooks.                                                                                                                                                                                                                                                                                           |
-| `sdm/maxent_results`               | Model     | Optional  | Species distribution modelling files using the MaxEnt method. Key files: `maxent_predict.grd` and `maxent_thresholds.csv`. Can be created via the Quarto notebooks.                                                                                                                                                                                                                                                                  |
+| File | Tab | Requisite | Description |
+|:---|:---|:---|:---|
+| `{study_group}.tre` | Phylogeny | Required | The phylogenetic tree data in the text-based Newick format. Can be created via the Quarto notebooks. |
+| `{study_group}_traits.csv` | Phylogeny | Optional | Table of trait data, usually categorical, but not limited to, with a column for each trait. The first column should have the header `Species_` and the rows should contain all the species in the tree as scientific names with underscores between the genus and species. All character names (column headers) and states (variables in rows) must be unique. Blanks or NAs are allowed. This file is manually created by the user. |
+| `{study_group}_default_target.txt` | Phylogeny | Optional | Text file defining the target species name to highlight in the app. Defaults to the first species alphabetically if missing. |
+| `{study_group}_occurrences.csv` | Map | Optional | Occurrence data with latitude and longitude in decimal degrees. Required columns: `species`, `decimalLatitude`, `decimalLongitude`, and `country`. This file should be created via the Quarto notebooks to ensure correct format. |
+| `sdm/climatch_results` | Model | Optional | Species distribution modelling files using the CLIMATCH method. Key file: `climatch_predict.grd`. Can be created via the Quarto notebooks. |
+| `sdm/maxent_results` | Model | Optional | Species distribution modelling files using the MaxEnt method. Key files: `maxent_predict.grd` and `maxent_thresholds.csv`. Can be created via the Quarto notebooks. |
 
 **Notes on the trait file**
 
@@ -161,21 +161,30 @@ By contributing to this project, you agree to abide by its terms.
 ## About
 
 This package was made using `{golem}` and you are reading about version
-1.0.0 .
+1.0.2.
 
 This README was compiled on:
 
-    #> [1] "2025-08-06 11:43:41 AEST"
+    #> [1] "2026-05-27 15:57:57 AEST"
 
 <!-- Here are the tests results and package coverage: -->
+
 <!-- ```{r, error = TRUE} -->
+
 <!-- devtools::check(quiet = TRUE) -->
+
 <!-- ``` -->
+
 <!-- ```{r echo = FALSE} -->
+
 <!-- unloadNamespace("phylocontrol.viz") -->
+
 <!-- ``` -->
+
 <!-- ```{r, error = TRUE} -->
+
 <!-- covr::package_coverage() -->
+
 <!-- ``` -->
 
 ## Citing PhyloControl
