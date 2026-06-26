@@ -2505,6 +2505,9 @@ app_server <- function(input, output, session) {
                       list(
                         extend = 'csv',
                         text = 'Download CSV',
+                        exportOptions = list(
+                          modifier = list(page = 'all')
+                        ),
                         filename = paste0("PhyloControl_test_list_",
                                           gsub(' ','_',vals$targetSpecies),
                                           "_", Sys.Date()),
@@ -2513,7 +2516,7 @@ app_server <- function(input, output, session) {
                     ),
                     autoWidth = TRUE
                   ))
-  })
+  }, server = FALSE)
 
   # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ## How to Files table ----
