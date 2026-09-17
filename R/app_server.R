@@ -2103,10 +2103,14 @@ app_server <- function(input, output, session) {
                                                                 maxZoom = max_zoom#,
                                                                 # attributionControl = FALSE
       )) |>
-        # leaflet::addTiles() |>  # Add the default base map
-        leaflet::addProviderTiles(provider = leaflet::providers$CartoDB.Positron,
-                                  # group = "Carto",
-                                  options = leaflet::providerTileOptions(zIndex=-10))
+      #  leaflet::addProviderTiles(provider = leaflet::providers$CartoDB.Positron,
+      #                           # group = "Carto",
+      #                           options = leaflet::providerTileOptions(zIndex=-10))
+      
+      leaflet::addProviderTiles(
+        leaflet::providers$Esri.WorldGrayCanvas,
+        options = leaflet::providerTileOptions(zIndex = -10)
+      )
 
       if (!is.null(species_map1)) {
         map <- map |> leaflet.extras::addHeatmap(data = geo_data1,
